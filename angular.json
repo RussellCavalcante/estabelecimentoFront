@@ -118,7 +118,7 @@
           },
           "configurations": {
             "production": {
-              "devServerTarget": "loginapp:serve:production"
+              "devServerTarget": "estabelecimentoFront:serve:production"
             }
           }
         },
