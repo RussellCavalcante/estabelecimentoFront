@@ -8,71 +8,71 @@
         <mat-card-title>Sign up</mat-card-title>
 
         <mat-card-content fxLayout="column" fxLayoutAlign="space-around stretch">
-                      
+
           <div fxLayout="row" fxLayoutAlign="space-between stretch">
             <mat-form-field fxFlex="45">
-              <input matInput type="text" formControlName="firstname" 
-                autocomplete="firstname" placeholder="First Name">
-            </mat-form-field>               
+              <input matInput type="text" formControlName="firstname"
+                autocomplete="firstname" placeholder="Primeiro Nome">
+            </mat-form-field>
             <mat-form-field fxFlex="45">
-              <input matInput type="text" formControlName="lastname" 
-                autocomplete="lastname" placeholder="Last Name" >
-            </mat-form-field>               
+              <input matInput type="text" formControlName="lastname"
+                autocomplete="lastname" placeholder="Ultimo Nome" >
+            </mat-form-field>
           </div>
 
           <mat-form-field>
-            <input matInput type="text" formControlName="address" 
-                  autocomplete="address" placeholder="Address" >
+            <input matInput type="text" formControlName="address"
+                  autocomplete="address" placeholder="Endereço" >
           </mat-form-field>
 
           <div fxLayout="row" fxLayoutAlign="space-between stretch">
-            <mat-form-field fxFlex="75"> 
-              <input matInput type="text" formControlName="city" 
-                autocomplete="citt" placeholder="City"  >
+            <mat-form-field fxFlex="75">
+              <input matInput type="text" formControlName="city"
+                autocomplete="citt" placeholder="Cidade"  >
             </mat-form-field>
-          
+
             <mat-form-field  fxFlex="15">
-              <mat-select matNativeControl placeholder="State" formControlName="state">
+              <mat-select matNativeControl placeholder="Estado" formControlName="state">
                 <mat-option *ngFor="let state of states" [value]="state">
                   {{state}}
                 </mat-option>
               </mat-select>
-            </mat-form-field>          
-            
-          </div>          
+            </mat-form-field>
+
+          </div>
 
           <div fxLayout="row" fxLayoutAlign="space-between stretch">
-            <mat-form-field fxFlex="45"> 
-              <input matInput type="text" formControlName="phone" 
+            <mat-form-field fxFlex="45">
+              <input matInput type="text" formControlName="phone"
                 autocomplete="Phone" placeholder="Phone"  >
             </mat-form-field>
-            <mat-form-field fxFlex="45">               
-              <input matInput type="text" formControlName="mobilephone" 
-                autocomplete="mobilephone" placeholder="Mobile Phone"  >
+            <mat-form-field fxFlex="45">
+              <input matInput type="text" formControlName="mobilephone"
+                autocomplete="mobilephone" placeholder="Telefone"  >
             </mat-form-field>
-          </div>  
+          </div>
 
           <div fxLayout="row" fxLayoutAlign="space-between stretch">
             <mat-form-field fxFlex="100">
-              <input matInput type="email" formControlName="email" 
+              <input matInput type="email" formControlName="email"
                 class="form-control" value="" autocomplete="email" placeholder="E-mail" >
-            </mat-form-field>  
+            </mat-form-field>
           </div>
 
           <div fxLayout="row" fxLayoutAlign="space-between stretch">
 
             <mat-form-field  fxFlex="45">
-              <input matInput type="password" formControlName="password1" 
+              <input matInput type="password" formControlName="password1"
                 type="password" autocomplete="off">
               <mat-placeholder>
-                <mat-icon>lock</mat-icon> New password
+                <mat-icon>lock</mat-icon> Nova senha
               </mat-placeholder>
             </mat-form-field>
             <mat-form-field fxFlex="45">
-              <input matInput type="password" formControlName="password2" 
+              <input matInput type="password" formControlName="password2"
                     class="form-control"  autocomplete="off">
               <mat-placeholder>
-                <mat-icon>lock_outline</mat-icon> Password confirmation
+                <mat-icon>lock_outline</mat-icon> Confirmar senha
               </mat-placeholder>
             </mat-form-field>
 

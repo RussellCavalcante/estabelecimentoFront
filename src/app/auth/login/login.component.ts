@@ -35,15 +35,15 @@ export class LoginComponent implements OnInit {
         (user) => {
           console.log(user);
           this.snackBar.open(
-            'Logged in successfuly. Welcome ' + user.firstname + '!', 'OK', 
-            {duration: 2000});        
+            'Logado com sucesso. Bem-vindo ' + user.firstname + '!', 'OK',
+            {duration: 2000});
           this.router.navigateByUrl('/');
           this.loading = false;
         },
         (err) => {
           console.log(err);
           this.snackBar.open(
-            'Login Error', 'OK', {duration: 2000});              
+            'Email ou senha incorretos :(', 'OK', {duration: 2000});
             this.loading = false;
         }
       )

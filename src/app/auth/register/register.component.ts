@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
       'password2': ['', [Validators.required, Validators.minLength(6)]],
     }, { validator: this.matchingPasswords});
 
-  states = ["MG", "RS", "SC", "GO", "PR", "SP"];
+  states = ["MG", "RS", "SC", "GO", "PR", "SP","CE"];
 
   constructor(
     private fb: FormBuilder,
@@ -49,14 +49,14 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formRegister.value);
-    let u: User = { 
-      ...this.formRegister.value, 
+    let u: User = {
+      ...this.formRegister.value,
       password: this.formRegister.value.password1};
     this.authService.register(u)
       .subscribe(
         (u) => {
           this.snackBar.open(
-            'Successfuly registered. Use your credentials to sing in',
+            'Registrado com sucesso !. Use suas credenciais para se logar !',
             'OK', {duration: 2000});
           this.router.navigateByUrl('/auth/login');
         },

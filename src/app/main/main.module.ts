@@ -2,14 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
-import { PeopleComponent } from './people/people.component';
+import { DepartmentComponent } from './people/people.component';
 import { ProductsComponent } from './products/products.component';
+import { MaterialModule } from '../material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [PeopleComponent, ProductsComponent],
+  declarations: [DepartmentComponent, ProductsComponent],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }

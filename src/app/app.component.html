@@ -1,17 +1,17 @@
-<mat-toolbar>
-  My App 
+<mat-toolbar style="color: #FF7F00;">
+  Meus estabelecimentos
   <span fxFlex></span>
 
   <ng-container *ngIf="!(authenticated$ | async) ">
     <button mat-button routerLink="/auth/login">
       <mat-icon>input</mat-icon>
-      &nbsp;Sign in
+      &nbsp;logar
     </button>
     <button mat-button routerLink="/auth/register">
       <mat-icon>person_add</mat-icon>
-      &nbsp;Sign Up
-    </button> 
-    
+      &nbsp;criar conta
+    </button>
+
   </ng-container>
 
   <ng-container *ngIf="(authenticated$ | async) && (user$ |async)">
@@ -36,7 +36,7 @@
         <mat-icon>exit_to_app</mat-icon>
         Exit
       </button>
-    </mat-menu>    
+    </mat-menu>
 
   </ng-container>
 </mat-toolbar>

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PeopleComponent } from './people/people.component';
+import { DepartmentComponent } from './people/people.component';
 import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'people'},
-  { path: 'people', component: PeopleComponent},
+  {path: '', redirectTo: 'products'},
+  { path: 'people', component: DepartmentComponent},
   { path: 'products', component: ProductsComponent}
 ];
 

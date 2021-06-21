@@ -1,12 +1,66 @@
+<mat-card style="background-color: aqua;">
+  <div fxLayout='row' fxLayoutAlign="spaces-between stretch">
+    <div fxFlex="50">
+      <mat-card fxFlex>
+        <mat-card-title>
+          Formulario de estabelecimentos
+        </mat-card-title>
 
-<h3>People</h3>
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign='space-between'>
+            <mat-form-field>
+              <input matInput [(ngModel)]="depName" (keyup.enter)='save()'>
+              <mat-hint>Nome do estabelecimento </mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [(ngModel)]="location" (keyup.enter)='save()'>
+              <mat-hint>localização do estabelecimento </mat-hint>
+            </mat-form-field>
+            <div>
+              <button mat-button color='primary' (click)="save()">Salvar</button>
+              <button mat-button color='warn' (click)="cancel()">Cancelar</button>
+            </div>
+          </div>
+          <mat-list>
+            <h3 mat-matSubheader></h3>
+            <mat-list-item *ngFor="let dep of departments">
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <h4 mat-line>Nome :{{dep.name}}</h4>
+              <h4 mat-line>localização :{{dep.location}}</h4>
+              <!-- <button mat-icon-button color=accent (click)="delete(dep)">  -->
+              <button mat-icon-button color=accent (click)="delete(dep)">
+                <mat-icon> delete </mat-icon>
+              </button>
 
-<div *ngIf="(people$ | async)?.length>0; else noperson">
-  <ul>
-    <li *ngFor="let p of (people$ | async)">{{p.name}} - {{p.email}}</li>
-  </ul>
-</div>
+              <button mat-icon-button color=primary (click)="edit(dep)">
+                <mat-icon> edit </mat-icon>
+              </button>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div style="padding-left: 20px;">
+      <div fxFlex="50">
+        <mat-card fxFlex>
+          <mat-card-title>
+            Filtrar estabelecimentos por localidade
+          </mat-card-title>
+          <mat-card-content>
+            <div fxLayout="column" fxLayoutAlign='space-between'>
+              <mat-form-field>
+                <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let estab of filteredOptions | async" [value]="estab">
+                    {{ estab }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+        </mat-card>
 
-<ng-template #noperson>
-  <p>No person found!</p>
-</ng-template>
+      </div>
+    </div>
+  </div>
+</mat-card>

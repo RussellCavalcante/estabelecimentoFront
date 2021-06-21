@@ -1,17 +1,17 @@
 <div fxLayout="column" >
     <div fxLayoutAlign="center" fxLayout="row">
       <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
-  
+
         <mat-card class="login-card mat-elevation-z8" >
-            <mat-card-title>Login</mat-card-title>
+            <mat-card-title style="color: #FF7F00;">Login</mat-card-title>
             <mat-card-content fxLayout="column" *ngIf="!loading" >
               <mat-form-field >
                 <input matInput formControlName="email" type="email"
                     placeholder="E-mail" autocomplete="email" readonly="false">
               </mat-form-field>
               <mat-form-field>
-                <input matInput formControlName="password" type="password" disabled="true" 
-                  placeholder="Password" autocomplete="password">
+                <input matInput formControlName="password" type="password" disabled="true"
+                  placeholder="Senha" autocomplete="password">
               </mat-form-field>
             </mat-card-content>
             <mat-card-actions fxLayout="row" fxLayoutAlign="end center" >
@@ -23,8 +23,8 @@
             <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
         </mat-card>
       </form>
-  
+
     </div>
   </div>
-  
-  
+
+
