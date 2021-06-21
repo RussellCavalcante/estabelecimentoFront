@@ -59,7 +59,7 @@ export class DepartmentComponent implements OnInit {
   save(){
     if (this.depEdit){
       this.departmentService.update(
-        {name: this.depName, _id: this.depEdit._id})
+        {name: this.depName,location: this.location, _id: this.depEdit._id})
         .subscribe(
           (dep) => {
             this.notify("Updated !")
@@ -85,6 +85,7 @@ export class DepartmentComponent implements OnInit {
 
   clearFields() {
     this.depName ='';
+    this.location ='';
     this.depEdit = null
   }
 
@@ -101,6 +102,7 @@ export class DepartmentComponent implements OnInit {
   }
   edit(dep: Department){
     this.depName = dep.name;
+    this.location = dep.location;
     this.depEdit = dep;
 
   }
